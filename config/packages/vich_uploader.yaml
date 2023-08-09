@@ -1,0 +1,27 @@
+vich_uploader:
+  db_driver: orm
+
+  mappings:
+    salles_images:
+      uri_prefix: /images/salles
+      upload_destination: '%kernel.project_dir%/public/images/salles'
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+      inject_on_load: false
+      delete_on_update: true
+      delete_on_remove: true
+
+
+
+
+    salles_event:
+      uri_prefix: /images/evnt
+      upload_destination: '%kernel.project_dir%/public/images/evnt'
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+      inject_on_load: false
+      delete_on_update: true
+      delete_on_remove: true
+
+
+    product_images:
+      uri_prefix: /images/product
+      upload_destination: '%kernel.project_dir%/public/images/product'

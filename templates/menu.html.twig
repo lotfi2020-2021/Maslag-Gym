@@ -1,0 +1,389 @@
+{% extends 'base.html.twig' %}
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+    {% if app.user.isVerified ==1 %}
+    <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <style>
+        .mn {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 450px;
+            background-color: #f1f1f1;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+
+        .lm a {
+            display: block;
+            color: #000;
+            padding: 8px 0 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        .lm a:hover {
+            background-color: #ffb320;
+            color: black;
+        }
+        .active {
+            background-color: #green;
+            color: green;
+        }
+    </style>
+
+
+
+
+
+    <!-- Latest news section -->
+    <div class="latest-news-section">
+        <div class="ln-title">Latest News</div>
+        <div class="news-ticker">
+            <div class="news-ticker-contant">
+                <div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+                <div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+                <div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest news section end -->
+
+    <section>
+        <div class="row">
+            <div class="col-3">
+    <ul class ="mn">
+        <li class ="lm"><a href="http://127.0.0.1:8000/product/controllers/fr">Products</a></li>
+        <li class ="lm"><a href="http://127.0.0.1:8000/homeSalle">Sales</a></li>
+        <li class ="lm"><a href="http://127.0.0.1:8000/aff/affichage">Events</a></li>
+        <li class ="lm"><a href="http://127.0.0.1:8000/planning/new1">Coachs</a></li>
+        <li class ="lm"><a href="http://127.0.0.1:8000/exercice/1">Exercices</a></li>
+    </ul>
+                </div>
+            <div class="col-8" >
+                <!-- Hero section -->
+                <section class="hero-section">
+                    <div class="hero-slider owl-carousel">
+                        <div class="hs-item set-bg" data-setbg="img1.jpg" style="height: 450px;  margin-top: 100px;">
+                            <div class="hs-text">
+                                <div class="container">
+                                    <h2>The Best <span>Sport</span> Platform</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hs-item set-bg" data-setbg="img2.jpg" style="height: 450px;  margin-top: 100px;">
+                            <div class="hs-text">
+                                <div class="container">
+                                    <h2>The Best <span>Sport</span> Platform</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada <br> lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. <br>Suspendisse cursus faucibus finibus.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hero section end -->
+
+
+            </div>
+        </div>
+
+
+
+
+
+                    </div>
+    </section>
+                <!-- Hero section end -->
+    <!-- Feature section -->
+    <section class="feature-section spad">
+        <div class="section-title">
+            <div class="cata new">new</div>
+            <h2>New Products</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/1.jpeg">
+                        <span class="cata new">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/2.jpeg">
+                        <span class="cata strategy">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/3.jpeg">
+                        <span class="cata new">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/4.jpeg">
+                        <span class="cata racing">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature section end -->
+
+
+    <!-- Recent game section  -->
+    <section class="recent-game-section spad set-bg" data-setbg="">
+        <div class="container">
+            <div class="section-title">
+                <div class="cata new">new</div>
+                <h2>Top Coachs</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="recent-game-item">
+                        <div class="rgi-thumb set-bg" data-setbg="menu/s1.jpeg">
+                            <div class="cata new">new</div>
+                        </div>
+                        <div class="rgi-content">
+                            <h5>Suspendisse ut justo tem por, rutrum</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+                            <a href="#" class="comment">3 Comments</a>
+                            <div class="rgi-extra">
+                                <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
+                                <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="recent-game-item">
+                        <div class="rgi-thumb set-bg" data-setbg="menu/s3.jpeg">
+                            <div class="cata racing">racing</div>
+                        </div>
+                        <div class="rgi-content">
+                            <h5>Susce pulvinar metus nulla, vel  facilisis sem </h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+                            <a href="#" class="comment">3 Comments</a>
+                            <div class="rgi-extra">
+                                <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
+                                <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="recent-game-item">
+                        <div class="rgi-thumb set-bg" data-setbg="menu/s2.jpeg">
+                            <div class="cata adventure">Adventure</div>
+                        </div>
+                        <div class="rgi-content">
+                            <h5>Suspendisse ut justo tem por, rutrum</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+                            <a href="#" class="comment">3 Comments</a>
+                            <div class="rgi-extra">
+                                <div class="rgi-star"><img src="img/icons/star.png" alt=""></div>
+                                <div class="rgi-heart"><img src="img/icons/heart.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Recent game section end -->
+
+
+    <!-- Tournaments section -->
+    <section class="tournaments-section spad">
+        <div class="container">
+            <div class="section-title">
+                <div class="cata new">new</div>
+                <h2>Events</h2>
+            </div>
+        <div class="container">
+            <div class="tournament-title">Tournaments</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="tournament-item mb-4 mb-lg-0">
+                        <div class="ti-notic">Premium Tournament</div>
+                        <div class="ti-content">
+                            <div class="ti-thumb set-bg" data-setbg="menu/a1.jpeg"></div>
+                            <div class="ti-text">
+                                <h4>sousse maraton</h4>
+                                <ul>
+                                    <li><span>Tournament Beggins:</span> June 20, 2018</li>
+                                    <li><span>Tounament Ends:</span> July 01, 2018</li>
+                                    <li><span>Participants:</span> 10 teams</li>
+                                    <li><span>Tournament Author:</span> Admin</li>
+                                </ul>
+                                <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="tournament-item">
+                        <div class="ti-notic">Premium Tournament</div>
+                        <div class="ti-content">
+                            <div class="ti-thumb set-bg" data-setbg="menu/a2.jpeg"></div>
+                            <div class="ti-text">
+                                <h4>Master olmpia 2021</h4>
+                                <ul>
+                                    <li><span>Tournament Beggins:</span> June 20, 2018</li>
+                                    <li><span>Tounament Ends:</span> July 01, 2018</li>
+                                    <li><span>Participants:</span> 10 teams</li>
+                                    <li><span>Tournament Author:</span> Admin</li>
+                                </ul>
+                                <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tournaments section bg -->
+
+
+    <!-- Review section -->
+    <section class="review-section spad set-bg" data-setbg="">
+        <div class="container">
+            <div class="section-title">
+                <div class="cata new">new</div>
+                <h2 href="http://127.0.0.1:8000/homeSalle">Sales Des Sports</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-item">
+                        <div class="review-cover set-bg" data-setbg="menu/m1.jpeg">
+                            <div class="score yellow">9.3</div>
+                        </div>
+                        <div class="review-text">
+                            <h5>California</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-item">
+                        <div class="review-cover set-bg" data-setbg="menu/m2.jpeg">
+                            <div class="score purple">9.5</div>
+                        </div>
+                        <div class="review-text">
+                            <h5>Paradise</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-item">
+                        <div class="review-cover set-bg" data-setbg="menu/m3.jpeg">
+                            <div class="score green">9.1</div>
+                        </div>
+                        <div class="review-text">
+                            <h5>Oxygene +</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-item">
+                        <div class="review-cover set-bg" data-setbg="menu/m4.jpeg">
+                            <div class="score pink">9.7</div>
+                        </div>
+                        <div class="review-text">
+                            <h5>Fit-Land</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Review section end -->
+
+
+    <!-- Feature section -->
+    <section class="feature-section spad">
+        <div class="section-title">
+            <div class="cata new">new</div>
+            <h2>Exercies</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/g1.jpeg">
+                        <span class="cata new">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Suspendisse ut justo tem por, rutrum</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/g2.jpeg">
+                        <span class="cata strategy">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/g3.jpeg">
+                        <span class="cata new">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="feature-item set-bg" data-setbg="menu/g4.jpeg">
+                        <span class="cata racing">new</span>
+                        <div class="fi-content text-white">
+                            <h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <a href="#" class="fi-comment">3 Comments</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature section end -->
+{% else %}
+    <h1 style="padding: 200px; color: red;">Verifier Votre compte STP!!!</h1>
+    {% endif %}
+
+{% endblock %}

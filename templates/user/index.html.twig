@@ -1,0 +1,174 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    {% block javascripts %}
+        <div class="form-row align-items-end" >
+            <div class="col">
+            </div>
+
+            <div class="col" >
+                <div class="form-group">
+                    <input id="a" type="text">
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $('#a').on('keydown', function(e) {
+                if(e.keyCode != 8) {
+                    sear = $("#a").val() + e.key;
+                }
+                else {
+                    sear = $("#a").val().substring(0,$("#a").val().length - 1);
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: "http://127.0.0.1:8000/user/search",
+                    data: { name: sear }
+                })
+                    .done(function( msg ) {
+
+
+                        $("#result").html("");
+                        text = "";
+                        if (msg[0].empty == 1) {
+                            t = "Aucun User ne correspond aux termes de recherche spécifiés";
+
+                            var isContains = $('#result').text().indexOf(t) > -1;
+
+                            if(!isContains && $("#a").val() != "") {
+                                text = "<div><h3>  Aucun User ne correspond aux termes de recherche spécifiés </h3></div>";
+
+                                $("#result").html(text+$("#result").html());
+
+                            }
+                            if(isContains && $("#a").val() == "") {
+                                var ret = $("#result").val().replace(t,'');
+                                $("#result").html(ret); }
+
+
+                        }
+
+                        $.each(msg, function( index, user ) {
+
+                            text = text + "<div >"+
+
+                           " <tr>"+
+                                "<td>"+ user.id +"</td>"+
+                                "<td>"+ user.nom +"</td>"+
+                                "<td>"+ user.prenom +"</td>"+
+                           "<td>"+ user.email +"</td>"+
+                            "<td>"+ user.roles +"</td>"+
+                            "<td>"+ user.cin +"</td>"+
+                "<td>"+ user.isVerified +"</td>"+
+
+
+                                "<td>"+
+                           "<button class='btn' style='background: #f0b90'>"+
+                           "<a   href='http://127.0.0.1:8000/"+user.id+"'> details </a>"+
+                           "</button> </td>"+
+                                "<td><img height='100' width='100' src='/images/salles/"+ user.imageName+"' ></td>";
+
+                            $("#result").html(text);
+
+
+
+
+                        });
+                    });
+            })
+        </script>
+    {% endblock %}
+    <h1>Users </h1>
+
+
+
+
+    <hr>
+<div >
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Cin</th>
+                <th>Verified</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>{% for role in user.roles %}
+                        {% if role == "ROLE_ADMIN" %}
+                            Administrateur
+                        {% elseif role == "ROLE_USER" %}
+                            Client
+                           {% elseif role == "ROLE_COACH" %}
+                             Coach
+                            {% endif %}
+                    {% endfor %}</td>
+                <td>{{ user.cin }}</td>
+                <td>{{ user.isVerified }}
+                <td>
+
+                <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-success btn-sm btn-icon"><i class="tim-icons icon-single-02"></i></a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-info btn-sm btn-icon" ><i class="tim-icons icon-settings"></i></a>
+                <td><img height="100" width="100" src="{{asset ('images/salles/'~ user.imageName)}} "></td>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_newb') }}">Create new User</a>
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
